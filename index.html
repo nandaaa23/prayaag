@@ -1,215 +1,369 @@
-<!DOCTYPE HTML>
-<!--
-	Forty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Forty by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PRAYAAG 5.0</title>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<a href="index.html" class="logo"><strong>Forty</strong> <span>by HTML5 UP</span></a>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
 
-				<!-- Menu -->
-					<nav id="menu">
-						<ul class="links">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="landing.html">Landing</a></li>
-							<li><a href="generic.html">Generic</a></li>
-							<li><a href="elements.html">Elements</a></li>
-						</ul>
-						<ul class="actions stacked">
-							<li><a href="#" class="button primary fit">Get Started</a></li>
-							<li><a href="#" class="button fit">Log In</a></li>
-						</ul>
-					</nav>
+    body {
+      background: #000;
+      color: #fff;
+      line-height: 1.6;
+    }
 
-				<!-- Banner -->
-					<section id="banner" class="major">
-						<div class="inner">
-							<header class="major">
-								<h1>Hi, my name is Forty</h1>
-							</header>
-							<div class="content">
-								<p>A responsive site template designed by HTML5 UP<br />
-								and released under the Creative Commons.</p>
-								<ul class="actions">
-									<li><a href="#one" class="button next scrolly">Get Started</a></li>
-								</ul>
-							</div>
-						</div>
-					</section>
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+	/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  z-index: 1000;
+  border-bottom: 1px solid #222;
+}
 
-				<!-- Main -->
-					<div id="main">
+.nav-logo {
+  font-weight: 800;
+  letter-spacing: 2px;
+}
 
-						<!-- One -->
-							<section id="one" class="tiles">
-								<article>
-									<span class="image">
-										<img src="images/pic01.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Aliquam</a></h3>
-										<p>Ipsum dolor sit amet</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic02.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Tempus</a></h3>
-										<p>feugiat amet tempus</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic03.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Magna</a></h3>
-										<p>Lorem etiam nullam</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic04.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Ipsum</a></h3>
-										<p>Nisl sed aliquam</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic05.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Consequat</a></h3>
-										<p>Ipsum dolor sit amet</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic06.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Etiam</a></h3>
-										<p>Feugiat amet tempus</p>
-									</header>
-								</article>
-							</section>
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
 
-						<!-- Two -->
-							<section id="two">
-								<div class="inner">
-									<header class="major">
-										<h2>Massa libero</h2>
-									</header>
-									<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus.</p>
-									<ul class="actions">
-										<li><a href="landing.html" class="button next">Get Started</a></li>
-									</ul>
-								</div>
-							</section>
+.nav-links a {
+  color: #fff;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
 
-					</div>
+.nav-links a:hover {
+  color: #ff2a2a;
+}
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
 
-				<!-- Contact -->
-					<section id="contact">
-						<div class="inner">
-							<section>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="6"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Clear" /></li>
-									</ul>
-								</form>
-							</section>
-							<section class="split">
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-envelope"></span>
-										<h3>Email</h3>
-										<a href="#">information@untitled.tld</a>
-									</div>
-								</section>
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-phone"></span>
-										<h3>Phone</h3>
-										<span>(000) 000-0000 x12387</span>
-									</div>
-								</section>
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-home"></span>
-										<h3>Address</h3>
-										<span>1234 Somewhere Road #5432<br />
-										Nashville, TN 00000<br />
-										United States of America</span>
-									</div>
-								</section>
-							</section>
-						</div>
-					</section>
+/* MOBILE NAV */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
 
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<ul class="icons">
-								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</footer>
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #000;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    border-top: 1px solid #222;
+  }
 
-			</div>
+  .nav-links li {
+    padding: 15px 0;
+  }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+  .nav-links.show {
+    display: flex;
+  }
+}
 
-	</body>
+/* Push hero down because navbar is fixed */
+.hero {
+  padding-top: 120px;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 15px;
+    font-size: 0.8rem;
+  }
+}
+
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+      background: radial-gradient(circle at center, #300000, #000);
+    }
+
+    .hero small {
+      letter-spacing: 2px;
+      opacity: 0.8;
+    }
+
+    .hero img {
+      width: 220px;
+      margin: 30px 0;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+    }
+
+    .hero h2 {
+      color: #ff2a2a;
+      margin-top: 10px;
+      font-weight: 600;
+    }
+
+    /* COUNTDOWN */
+    .countdown {
+      display: flex;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .time-box {
+      text-align: center;
+    }
+
+    .time-box span {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #ff2a2a;
+    }
+
+    .time-box p {
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* ASSOCIATIONS */
+    .section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+
+    .associations {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .card {
+      border: 1px solid #ff2a2a;
+      padding: 40px 20px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      background: #ff2a2a;
+      color: #000;
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border: 2px solid #111;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #000;
+      border-top: 1px solid #222;
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    footer span {
+      color: #ff2a2a;
+    }
+  </style>
+</head>
+
+<body>
+	<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-logo">PRAYAAG 5.0</div>
+
+  <div class="menu-toggle" id="menu-toggle">
+    ☰
+  </div>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#vistara">Vistara</a></li>
+    <li><a href="#caryatid">Caryatid</a></li>
+    <li><a href="#codex">Codex</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+  </ul>
+</nav>
+
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <small>LBS INSTITUTE OF TECHNOLOGY FOR WOMEN PRESENTS</small>
+
+    <!-- LOGO -->
+   <img src="assets/images/logo.png.png" alt="Prayag Logo" class="logo">
+
+
+
+    <h1>PRAYAAG 5.0</h1>
+    <h2>CODE · CREATE · CONSTRUCT</h2>
+
+    <p style="margin-top:20px;">January 31 & February 01, 2026</p>
+
+    <!-- COUNTDOWN -->
+    <div class="countdown" id="countdown">
+      <div class="time-box">
+        <span id="days">00</span>
+        <p>DAYS</p>
+      </div>
+      <div class="time-box">
+        <span id="hours">00</span>
+        <p>HOURS</p>
+      </div>
+      <div class="time-box">
+        <span id="minutes">00</span>
+        <p>MINUTES</p>
+      </div>
+      <div class="time-box">
+        <span id="seconds">00</span>
+        <p>SECONDS</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+  <h2>Our Associations</h2>
+  <div class="associations">
+
+    <a href="vistara.html" class="card" id="vistara">
+      <h3>VISTARA</h3>
+      <p>Innovation & technical exploration wing</p>
+    </a>
+
+    <a href="caryatid.html" class="card" id="caryatid">
+      <h3>CARYATID</h3>
+      <p>Creative and design-driven association</p>
+    </a>
+
+    <a href="codex.html" class="card" id="codex">
+      <h3>CODEX</h3>
+      <p>Coding & problem-solving core</p>
+    </a>
+
+  </div>
+</section>
+
+
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
+    <h2>Moments from Prayaag</h2>
+    <div class="gallery">
+      <img src="images/gallery1.jpg">
+      <img src="images/gallery2.jpg">
+      <img src="images/gallery3.jpg">
+      <img src="images/gallery4.jpg">
+      <img src="images/gallery5.jpg">
+      <img src="images/gallery6.jpg">
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><span>PRAYAAG 5.0</span> · LBS Institute of Technology for Women</p>
+    <p>© 2026 Prayaag. All rights reserved.</p>
+  </footer>
+
+  <!-- COUNTDOWN SCRIPT -->
+  <script>
+    const targetDate = new Date("Jan 31, 2026 09:00:00").getTime();
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const diff = targetDate - now;
+
+      document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+      document.getElementById("hours").innerText = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      document.getElementById("minutes").innerText = Math.floor((diff / (1000 * 60)) % 60);
+      document.getElementById("seconds").innerText = Math.floor((diff / 1000) % 60);
+    }, 1000);
+  </script>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+
+  toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+
+  // Close menu when clicking a link
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("show");
+    });
+  });
+</script>
+
+</body>
 </html>

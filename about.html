@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>About</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+
   <style>
     * {
       margin: 0;
@@ -13,41 +15,132 @@
     }
 
     body {
-  height: 100vh;
-  background: url("./assets/images/college-photo.jpeg") center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+      min-height: 100vh;
+      background: #000;
+      color: #fff;
+      padding-top: 80px;
+    }
 
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-    .glass-box {
-      width: 70%;
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(106, 4, 15, 0.2);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 1000;
+      border-bottom: 1px solid #222;
+    }
+
+    .nav-logo {
+      color: #d3d3d3;
+      font-weight: 800;
+      letter-spacing: 2px;
+      font-family: "ZenDots";
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;  
+    }
+
+    .nav-links a {
+      color: #e0e0e0;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ae2012;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #000;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        border-top: 1px solid #222;
+      }
+
+      .nav-links li {
+        padding: 15px 0;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+    }
+
+    .about-box {
+      width: 80%;
       max-width: 900px;
-      padding: 3rem;
-      background: rgba(255, 255, 255, 0.08);
+      margin: 120px auto 0;
+      padding: 60px 50px;
+      background: rgba(106, 4, 15, 0.25);
       backdrop-filter: blur(18px);
       border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 0 40px rgba(0,0,0,0.4);
-      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 0 30px rgba(106, 4, 15, 0.4);
       text-align: center;
-      animation: fadeUp 1s ease-out;
+      animation: softFade 1.2s ease-out forwards;
     }
 
     h1 {
+      font-family: "ZenDots", sans-serif;
       font-size: 3rem;
-      margin-bottom: 1rem;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+      color: #f2c9c9;
+      text-shadow: 0 0 10px rgba(255, 180, 180, 0.4);
     }
 
     p {
       font-size: 1.1rem;
-      line-height: 1.7;
-      opacity: 0.9;
+      line-height: 1.8;
+      color: #e0e0e0;
+      opacity: 0.95;
     }
 
-    @keyframes fadeUp {
+    @font-face {
+        font-family: "ZenDots";
+        src: url("./assets/webfonts/ZenDots-Regular.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Montserrat";
+        src: url("./assets/webfonts/Montserrat-Regular.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @keyframes softFade {
       from {
         opacity: 0;
         transform: translateY(40px);
@@ -61,15 +154,47 @@
 </head>
 <body>
 
-  <div class="glass-box">
-    <h1>ABOUT</h1>
-    <p>
-      PRAYAAG is the annual techno-cultural fest of XYZ College, bringing together innovation,
-      creativity, and futuristic experiences. It serves as a platform for students to explore
-      technology, art, and ideas beyond boundaries, creating an atmosphere where imagination
-      meets execution.
-    </p>
-  </div>
+<nav class="navbar">
+  <div class="nav-logo">PRAYAAG 5.0</div>
+
+  <div class="menu-toggle" id="menu-toggle">☰</div>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="./associations/vistara.html">Vistara</a></li>
+    <li><a href="./associations/caryatid.html">Caryatid</a></li>
+    <li><a href="./associations/codex.html">Codex</a></li>
+    <li><a href="./index.html#gallery">Gallery</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</nav>
+
+<div class="about-box">
+  <h1>ABOUT</h1>
+  <p>
+    PRAYAAG is the annual techno-cultural fest of LBS Institute of Technology for Women, a
+    convergence of innovation, creativity, and engineering spirit. The fest serves as a
+    platform for students to showcase technical excellence, artistic expression, and
+    collaborative problem solving through competitions, workshops, and immersive experiences.
+    With every edition, PRAYAAG evolves as a celebration of ideas, ambition, and the future of
+    technology-driven creativity.
+  </p>
+</div>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+
+  toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("show");
+    });
+  });
+</script>
 
 </body>
 </html>

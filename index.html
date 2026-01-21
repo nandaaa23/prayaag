@@ -4,299 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PRAYAAG 5.0</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    body {
-      background: #000;
-      color: #fff;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-	#loader {
-  position: fixed;
-  inset: 0;
-  background: #f7f3ed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-
-.loader-circle {
-  width: 90px;
-  height: 90px;
-  border: 3px solid #ddd;
-  border-top: 3px solid #ff2a2a;
-  border-radius: 50%;
-  animation: spin 9.s linear infinite;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-	/* NAVBAR */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(0,0,0,0.9);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  z-index: 1000;
-  border-bottom: 1px solid #222;
-}
-
-.nav-logo {
-  font-weight: 800;
-  letter-spacing: 2px;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-}
-
-.nav-links a {
-  color: #fff;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
-  transition: 0.3s;
-}
-
-.nav-links a:hover {
-  color: #ff2a2a;
-}
-.menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-
-/* MOBILE NAV */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background: #000;
-    flex-direction: column;
-    align-items: center;
-    display: none;
-    border-top: 1px solid #222;
-  }
-
-  .nav-links li {
-    padding: 15px 0;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-}
-
-/* Push hero down because navbar is fixed */
-
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .nav-links {
-    gap: 15px;
-    font-size: 0.8rem;
-  }
-}
-
-
-    /* HERO */
-    .hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 120px 20px 40px;
-
-  /* Background image */
-  background: url('assets/images/bg2.jpg') no-repeat center center;
-  background-size: cover;
-
-  /* Optional: dark overlay */
-  position: relative;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.5); /* dark overlay, adjust opacity if needed */
-  z-index: 1;
-}
-
-.hero * {
-  position: relative;
-  z-index: 2; /* make content appear above overlay */
-}
-
-    .hero small {
-      letter-spacing: 2px;
-      opacity: 0.8;
-    }
-
-    .hero img {
-      width: 220px;
-      margin: 30px 0;
-    }
-
-    .hero h1 {
-  font-family: 'Zen Dots', cursive;
-  font-size: 5.5rem;        /* increase size */
-  letter-spacing: 6px;
-  text-shadow:
-    0 0 10px #9d0208
-   
-}
-
-	.presenter {
-  font-size: 14px;
-  letter-spacing: 3px;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-
-  /* FORCE VISIBILITY */
-  color: #ffffff !important;
-  opacity: 1 !important;
-
-  /* underline */
-  border-bottom: 1px solid rgba(255,255,255,0.3);
-  padding-bottom: 8px;
-
-  position: relative;
-  z-index: 5;
-}
-
-
-
-    .hero h2 {
-      color: #ff2a2a;
-      margin-top: 10px;
-      font-weight: 600;
-    }
-
-    /* COUNTDOWN */
-    .countdown {
-      display: flex;
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .time-box {
-      text-align: center;
-    }
-
-    .time-box span {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: #ff2a2a;
-    }
-
-    .time-box p {
-      font-size: 0.9rem;
-      opacity: 0.7;
-    }
-
-    /* ASSOCIATIONS */
-    .section {
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    .section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 40px;
-    }
-
-    .associations {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 30px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .card {
-      border: 1px solid #ff2a2a;
-      padding: 40px 20px;
-      transition: 0.3s;
-      cursor: pointer;
-    }
-
-    .card:hover {
-      background: #ff2a2a;
-      color: #000;
-      transform: translateY(-5px);
-    }
-
-    .card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-    }
-
-    /* GALLERY */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border: 2px solid #111;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #000;
-      border-top: 1px solid #222;
-      padding: 30px 20px;
-      text-align: center;
-      font-size: 0.9rem;
-      opacity: 0.8;
-    }
-
-    footer span {
-      color: #ff2a2a;
-    }
-  </style>
+  <link rel="stylesheet" href="main.css">
+ 
 </head>
 
 <body>
@@ -397,11 +110,116 @@ html {
     </div>
   </section>
 
-  <footer>
-    <p><span>PRAYAAG 5.0</span> · LBS Institute of Technology for Women</p>
-    <p>© 2026 Prayaag. All rights reserved.</p>
-  </footer>
+ <div class="container my-5">
+  <!-- Footer -->
+  <footer class="text-center text-white" style="background-color: #ff2a2a">
+    <!-- Grid container -->
+    <div class="container">
+      <!-- Section: Links -->
+      <section class="mt-5">
+        <!-- Grid row-->
+        <div class="row text-center d-flex justify-content-center pt-5">
+          <!-- Grid column -->
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#!" class="text-white">About us</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
 
+          <!-- Grid column -->
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#!" class="text-white">Products</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#!" class="text-white">Awards</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#!" class="text-white">Help</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#!" class="text-white">Contact</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row-->
+      </section>
+      <!-- Section: Links -->
+
+      <hr class="my-5" />
+
+      <!-- Section: Text -->
+      <section class="mb-5">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-8">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+              distinctio earum repellat quaerat voluptatibus placeat nam,
+              commodi optio pariatur est quia magnam eum harum corrupti
+              dicta, aliquam sequi voluptate quas.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Section: Text -->
+
+      <!-- Section: Social -->
+      <section class="text-center mb-5">
+        <a href="" class="text-white me-4">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-github"></i>
+        </a>
+      </section>
+      <!-- Section: Social -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div
+         class="text-center p-3"
+         style="background-color: rgba(0, 0, 0, 0.2)"
+         >
+      © 2020 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/"
+         >MDBootstrap.com</a
+        >
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+</div>
+<!-- End of .container -->
   <script>
     const targetDate = new Date("Jan 31, 2026 09:00:00").getTime();
 
@@ -446,5 +264,12 @@ html {
 
   reveals.forEach(el => observer.observe(el));
 </script>
+<script>
+  window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+    loader.style.display = "none";
+  });
+</script>
+
 </body>
 </html>

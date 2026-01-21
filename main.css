@@ -233,6 +233,7 @@ html {
     }
 
 
+    
 .footer-spacer {
   height: 120px;
 }
@@ -397,14 +398,6 @@ html {
   animation: softFade 1.2s ease-out forwards;
 }
 
-model-viewer {
-  animation: float 4s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
 
 /* Scroll Reveal Base */
 .reveal {

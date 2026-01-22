@@ -110,9 +110,9 @@ html {
     }
 
     model-viewer {
-      max-width: 400px;
+      max-width: 200px;
       width: 100%;
-      height: 400px;
+      height: 200px;
     } 
 
     model-viewer::part(default-progress-bar) {
@@ -425,16 +425,18 @@ html {
 
   .hero {
     padding: 110px 15px 40px;
+    align-items: center;
   }
 
   model-viewer {
-    height: 260px;
-    max-width: 90vw;
+    width: 160px !important;
+    height: 160px !important;
+    margin: 20px auto !important;
+    display: block
   }
 
   .hero h1 {
     font-size: 2.8rem;
-    letter-spacing: 2px;
   }
 
   .hero h2 {
